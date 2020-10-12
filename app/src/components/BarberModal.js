@@ -246,29 +246,26 @@ export default ({show, setShow, user, service}) => {
         setShow(false);        
     };
 
-    const handleFinishClick = () => {
+    const handleFinishClick = async () => {
         if ((user.id) && (service != null) && (selectedYear > 0) && (selectedMonth > 0) && (selectedDay > 0) && (selectedHour != null) ) {
-            /*let res = await Api.setAppointment(
+            let res = await Api.setAppointment(
             user.id,
-            service,
+            user.services[service].id,
             selectedYear,
-            selectedMonth,
+            selectedMonth + 1,
             selectedDay,
             selectedHour
         );
-
-        if (res == '') {
-            setShow(false);
-            navigation.navigate('Appointments');
+            if (res.error == '') {
+                setShow(false);
+                navigation.navigate('Appointments');
+            } else {
+                alert(res.error);
+            }
         } else {
-            alert('res.error');
-        }*/
-            setShow(false);
-            navigation.navigate('Appointments');
-        } else {
-            alert('Preencha todos os dados!!!')
-;        }
-    };
+            alert('Preencha todos os dados!!!');        
+        }
+    }
 
     const handleLeftDateClick = () => {
         let mountDate = new Date(selectedYear, selectedMonth, 1);
