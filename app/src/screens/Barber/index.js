@@ -83,7 +83,7 @@ export default () => {
 
     const handleFavClick = () => {
         setFavorited(!favorited);
-        //Api.setFavorite(userInfo.id);
+        Api.setFavorite(userInfo.id);
     };
 
     const handleServiceChoose = (key) => {
@@ -116,7 +116,7 @@ export default () => {
                         <UserAvatar source={{uri:userInfo.avatar}} />
                         <UserInfo>
                             <UserInfoName>{userInfo.name}</UserInfoName>
-                            <Stars starts={userInfo.starts} showNumber={true} />
+                            <Stars starts={userInfo.starts} showNumber />
                         </UserInfo>
                         <UserFavButton onPress={handleFavClick}>
                             {favorited ?
