@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\UserFavorite;
+use App\Models\UserAppointment;
 use App\Models\Barber;
+use App\Models\BarberService;
 
 class UserController extends Controller
 {
@@ -76,6 +78,36 @@ class UserController extends Controller
             $array['error'] = 'Barbeiro inexistente';
         }
         
+        return $array;
+    }
+
+    public function getAppointments() {
+        $array = [
+            'error' => '',
+            'list' => []
+        ];
+
+        $apps = UserAppointment::select()
+            ->where('id_user', $this->loggedUser->id)
+            ->orderBy('ap_datetime', 'DESC')
+        ->get();
+
+        if ($apps) {
+            foreach ($apps as $app) {
+                $barber = Barber::find($app['id_barber']);
+                $barber['avatar'] = url('media/avatars/'.$barber['avatar']);
+
+                $service = BarberService::find($app['id_service']);
+
+                $array['list'][] = [
+                    'id' => $app['id'],
+                    'ap_datetime' => $app['ap_datetime'],
+                    'barber' => $barber,
+                    'service' => $service
+                ];
+            }
+        }
+
         return $array;
     }
 }
