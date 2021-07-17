@@ -23,11 +23,11 @@ Route::post('/user', [AuthController::class, 'create']);
 Route::get('/user', [UserController::class, 'read']);
 Route::put('/user', [UserController::class, 'update']);
 Route::get('/user/favorites', [UserController::class, 'getFavorites']);
-Route::post('/user/favorite', [UserController::class, 'addFavorite']);
+Route::post('/user/favorite', [UserController::class, 'toogleFavorite']);
 Route::get('/user/appointments', [UserController::class, 'getAppointments']);
 
 Route::get('/barbers', [BarberController::class, 'list']);
 Route::get('/barber/{id}', [BarberController::class, 'one']);
-Route::post('/barber/{id}/appointments', [BarberController::class, 'setAppointment']);
+Route::post('/barber/{id}/appointment', [BarberController::class, 'setAppointment']);
 
 Route::get('/search', [BarberController::class, 'search']);
