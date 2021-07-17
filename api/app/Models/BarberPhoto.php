@@ -10,5 +10,5 @@ class BarberPhoto extends Model
     use HasFactory;
 
     protected $table = 'barberphotos';
-    public $tymestamps = false;
+    public $timestamps = false;
 }

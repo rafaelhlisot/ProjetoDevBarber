@@ -10,5 +10,5 @@ class BarberAvailability extends Model
     use HasFactory;
 
     protected $table = 'barberavailability';
-    public $tymestamps = false;
+    public $timestamps = false;
 }

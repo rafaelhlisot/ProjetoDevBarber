@@ -10,5 +10,5 @@ class BarberTestimonial extends Model
     use HasFactory;
 
     protected $table = 'barbertestimonials';
-    public $tymestamps = false;
+    public $timestamps = false;
 }

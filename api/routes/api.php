@@ -11,6 +11,8 @@ Route::get('/ping', function() {
     return ['pong' => true];
 });
 
+Route::get('/random', [BarberController::class, 'createRandom']);
+
 Route::get('/401', [AuthController::class, 'unauthorized'])->name('login');
 
 Route::post('/auth/login', [AuthController::class, 'login']);

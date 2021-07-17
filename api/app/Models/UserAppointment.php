@@ -10,5 +10,5 @@ class UserAppointment extends Model
     use HasFactory;
 
     protected $table = 'userappointments';
-    public $tymestamps = false;
+    public $timestamps = false;
 }

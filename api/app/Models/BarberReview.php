@@ -10,5 +10,5 @@ class BarberReview extends Model
     use HasFactory;
 
     protected $table = 'barberreviews';
-    public $tymestamps = false;
+    public $timestamps = false;
 }

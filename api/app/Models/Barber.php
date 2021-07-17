@@ -9,5 +9,5 @@ class Barber extends Model
 {
     use HasFactory;
 
-    public $tymestamps = false;
+    public $timestamps = false;
 }
