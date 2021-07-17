@@ -13,7 +13,7 @@ import {
 } from './styles';
 
 import {UserContext} from '../../contexts/UserContext';
-import Api from '../../Api';
+import Api from '../../services/Api';
 
 import SignInput from '../../components/SignInput';
 

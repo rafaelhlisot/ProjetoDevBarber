@@ -14,7 +14,7 @@ import {
     SignMessageButtonTextBold
 } from './styles';
 
-import Api from '../../Api';
+import Api from '../../services/Api';
 
 import SignInput from '../../components/SignInput';
 

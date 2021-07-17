@@ -1,9 +1,9 @@
 import React from 'react';
 import {Container} from './styles';
 import {Text, Button} from 'react-native';
-import {useNavigation, useNavigationBuilder} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
-import Api from '../../Api';
+import Api from '../../services/Api';
 
 export default () => {
     const navigation = useNavigation();

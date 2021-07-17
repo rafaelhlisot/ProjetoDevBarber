@@ -42,7 +42,7 @@ import {
     TestimonialBody
 } from './styles';
 
-import Api from '../../Api';
+import Api from '../../services/Api';
 
 export default () => {
 

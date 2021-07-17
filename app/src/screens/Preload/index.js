@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {useNavigation} from '@react-navigation/native';
 
 import {UserContext} from '../../contexts/UserContext';
-import Api from '../../Api';
+import Api from '../../services/Api';
 
 import BarberLogo from '../../assets/barber.svg';
 

@@ -12,7 +12,7 @@ import {
 
 import BarberItem from '../../components/BarberItem';
 
-import Api from '../../Api';
+import Api from '../../services/Api';
 
 export default () => {
 
