@@ -18,7 +18,7 @@ class UserController extends Controller
         $array = ['error' => ''];
 
         $info = $this->loggedUser;
-        $info['avatar'] = url('media/avatars'.$info['avatar']);
+        $info['avatar'] = url('media/avatars/'.$info['avatar']);
         $array['data'] = $info;
 
         return $array;
