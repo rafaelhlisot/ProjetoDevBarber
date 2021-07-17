@@ -9,6 +9,6 @@ class UserFavorite extends Model
 {
     use HasFactory;
 
-    protected $table = 'userfavorites';
+    protected $table = 'usersfavorites';
     public $timestamps = false;
 }
