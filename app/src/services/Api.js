@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
 ///const BASE_API = 'https://api.b7web.com.br/devbarber/api';
-const BASE_API = 'http://127.0.0.1:8000/api';
+const BASE_API = 'http://10.0.2.2:8000/api';
 
 export default {
     checkToken: async (token) => {
@@ -103,5 +103,11 @@ export default {
         const req = await fetch(`${BASE_API}/user/favorites?token=${token}`);
         const json = await req.json();
         return json;
-    }    
+    },
+    getAppointments: async () => {
+        const token = await AsyncStorage.getItem('token');
+        const req = await fetch(`${BASE_API}/user/appointments?token=${token}`);
+        const json = await req.json();
+        return json;
+    }
 };
